@@ -13,7 +13,9 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+          '36': 'linear-gradient(0deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%)',
       },
+     
     },
   },
   plugins: [
@@ -116,6 +118,12 @@ const config: Config = {
           userSelect: 'none',
           WebkitUserSelect: 'none',
           touchAction: 'manipulation',
+          boxShadow: 'rgba(239, 239, 247, 0.2) 0 1px 30px',
+          '&:hover': {
+            boxShadow: 'rgba(80, 63, 205, 0.5) 0 1px 30px',
+            transitionDuration: '.1s',
+          },
+          
         },
         '@media (min-width: 768px)': {
           '.button-36': {

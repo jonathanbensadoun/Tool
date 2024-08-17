@@ -7,7 +7,7 @@ import { toPng } from "html-to-image";
 const Page: React.FC = () => {
   const [valueQRCode, setValueQRCode] = useState<string>("");
   const [isValidated, setIsValidated] = useState<boolean>(false);
-  const [colorQrcode] = useState<string>("#000000");
+  const [colorQrcode, setColorQrcode] = useState<string>("#2e3c84");
 
   const qrCodeRef = useRef<HTMLDivElement>(null);
 
@@ -41,8 +41,15 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div className="bg-blue-500 flex flex-col justify-center items-center h-screen">
-      <h1 className="pb-10 text-3xl">Générateur de QR Code</h1>
+    <div className="bg-36 flex flex-col justify-center items-center h-screen">
+      <h1 className="pb-10 text-3xl ">Générateur de QR Code</h1>
+      <h3>choix de la couleur</h3>
+      <input
+        type="color"
+        value={colorQrcode}
+        onChange={(e) => setColorQrcode(e.target.value)}
+        className="p-2 my-4 text-black border-2 border-black rounded-md"
+      />
       <input
         type="text"
         value={valueQRCode}
@@ -53,7 +60,7 @@ const Page: React.FC = () => {
       <button onClick={handleValidation} className="py-2 button-36 mb-10">
         Valider
       </button>
-      <div ref={qrCodeRef} className="w-64 h-64">
+      <div ref={qrCodeRef} className="border-2 shadow-lg">
         <QRCode
           size={256}
           value={valueQRCode}
@@ -63,11 +70,9 @@ const Page: React.FC = () => {
         />
       </div>
       <div className="h-10 ">
-        {isValidated && (
-          <button onClick={handleDownload} className="py-2 button-36 mt-10">
-            Télécharger QR Code
-          </button>
-        )}
+        <button onClick={handleDownload} className="py-2 button-36 mt-10">
+          Télécharger QR Code
+        </button>
       </div>
     </div>
   );
