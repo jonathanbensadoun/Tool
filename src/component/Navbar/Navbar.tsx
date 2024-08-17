@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
       className="flex flex-row justify-between p-4"
       style={{ background: "linear-gradient(36deg, #5636b0,25%, #0d0d31)" }}
     >
-      <h1>Dev-Tool</h1>
+      <h1>Tool For Dev</h1>
       <ul
         className="flex flex-row"
         style={{
