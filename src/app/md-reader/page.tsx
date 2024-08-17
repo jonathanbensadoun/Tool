@@ -116,7 +116,7 @@ const Page: React.FC = () => {
       <div
         id="markdown-content"
         // className=" text-black bg-white bg-opacity-40  rounded-lg max-w-screen "
-        className=" markdown-body rounded-lg max-w-screen "
+        className=" markdown-body rounded-lg  w-full md:w-1/2 mx-4 text-wrap "
       >
         <ReactMarkdown className={`${markdownContent ? "p-4" : ""}`}>
           {markdownContent}
