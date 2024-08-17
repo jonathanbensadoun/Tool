@@ -13,7 +13,8 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-          '36': 'linear-gradient(0deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%)',
+        '36': 'linear-gradient(0deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%)',
+        '37': 'linear-gradient(36deg, #754fcf 9.16%, #5643CC 43.89%, #01010e 64.72%)',
       },
       keyframes: {
         'glowing-button-37': {
