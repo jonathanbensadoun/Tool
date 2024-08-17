@@ -27,11 +27,12 @@ const Page: React.FC = () => {
     }
     //remplace les " " par des "_" dans le nom du fichier
     const name = valueQRCode.replace(/ /g, "_");
+    const randomNumber = (Math.random() * 10000).toString();
 
     toPng(qrCodeRef.current, { cacheBust: true })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = name;
+        link.download = randomNumber + ".png";
         link.href = dataUrl;
         link.click();
       })
@@ -42,7 +43,7 @@ const Page: React.FC = () => {
 
   return (
     <div className="bg-36 flex flex-col justify-center items-center h-screen">
-      <h1 className="pb-10 text-3xl ">Générateur de QR Code</h1>
+      <h1 className="pb-10 text-3xl text-shadow">Générateur de QR Code</h1>
       <h3>choix de la couleur</h3>
       <input
         type="color"
