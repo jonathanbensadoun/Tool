@@ -21,6 +21,9 @@ const Navbar: React.FC = () => {
         <li>
           <Link href="/css-gradient">CSS Gradient</Link>
         </li>
+        <li>
+          <Link href="/md-reader">MD reader</Link>
+        </li>
       </ul>
     </nav>
   );
