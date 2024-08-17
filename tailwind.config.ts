@@ -15,7 +15,16 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
           '36': 'linear-gradient(0deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%)',
       },
-     
+      keyframes: {
+        'glowing-button-37': {
+          '0%': { backgroundPosition: '0 0' },
+          '50%': { backgroundPosition: '400% 0' },
+          '100%': { backgroundPosition: '0 0' },
+        },
+      },
+      animation: {
+        'glowing-button-37': 'glowing-button-37 20s linear infinite',
+      },
     },
   },
   plugins: [
@@ -118,7 +127,7 @@ const config: Config = {
           userSelect: 'none',
           WebkitUserSelect: 'none',
           touchAction: 'manipulation',
-          boxShadow: 'rgba(239, 239, 247, 0.2) 0 1px 30px',
+          boxShadow: 'rgba(239, 239, 247, 0.3) 0 1px 30px',
           '&:hover': {
             boxShadow: 'rgba(80, 63, 205, 0.5) 0 1px 30px',
             transitionDuration: '.1s',
@@ -128,6 +137,47 @@ const config: Config = {
         '@media (min-width: 768px)': {
           '.button-36': {
             padding: '0 2.6rem',
+          },
+        },
+        '.button-37': {
+          padding: '0.6em 2em',
+          border: 'none',
+          outline: 'none',
+          color: 'rgb(255, 255, 255)',
+          background: '#2e3c84',
+          cursor: 'pointer',
+          position: 'relative',
+          zIndex: '0',
+          borderRadius: '10px',
+          userSelect: 'none',
+          WebkitUserSelect: 'none',
+          touchAction: 'manipulation',
+          '&:before': {
+            content: '""',
+            background: 'linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000)',
+            position: 'absolute',
+            top: '-2px',
+            left: '-2px',
+            backgroundSize: '400%',
+            zIndex: '-1',
+            filter: 'blur(5px)',
+            WebkitFilter: 'blur(5px)',
+            width: 'calc(100% + 4px)',
+            height: 'calc(100% + 4px)',
+            animation: theme('animation.glowing-button-37'),
+            transition: 'opacity 0.3s ease-in-out',
+            borderRadius: '10px',
+          },
+          '&:after': {
+            zIndex: '-1',
+            content: '""',
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            background: '#2e3c84',
+            left: '0',
+            top: '0',
+            borderRadius: '10px',
           },
         },
         

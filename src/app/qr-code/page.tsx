@@ -11,10 +11,6 @@ const Page: React.FC = () => {
 
   const qrCodeRef = useRef<HTMLDivElement>(null);
 
-  const handleValidation = () => {
-    setIsValidated(true);
-  };
-
   useEffect(() => {
     if (valueQRCode === "") {
       setIsValidated(false);
@@ -25,8 +21,7 @@ const Page: React.FC = () => {
     if (qrCodeRef.current === null) {
       return;
     }
-    //remplace les " " par des "_" dans le nom du fichier
-    const name = valueQRCode.replace(/ /g, "_");
+
     const randomNumber = (Math.random() * 10000).toString();
 
     toPng(qrCodeRef.current, { cacheBust: true })
@@ -58,9 +53,7 @@ const Page: React.FC = () => {
         className="p-2 mb-4 text-black border-2 border-black rounded-md"
         placeholder="Enter QR Code value"
       />
-      <button onClick={handleValidation} className="py-2 button-36 mb-10">
-        Valider
-      </button>
+
       <div ref={qrCodeRef} className="border-2 shadow-lg">
         <QRCode
           size={256}
@@ -71,7 +64,7 @@ const Page: React.FC = () => {
         />
       </div>
       <div className="h-10 ">
-        <button onClick={handleDownload} className="py-2 button-36 mt-10">
+        <button onClick={handleDownload} className="py-2 button-37 mt-10">
           Télécharger QR Code
         </button>
       </div>
