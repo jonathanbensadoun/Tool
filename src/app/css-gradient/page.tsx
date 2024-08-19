@@ -69,7 +69,7 @@ const GradientGenerator = () => {
         <div
           className="w-full h-32 rounded-lg mb-4"
           style={{ background: gradientCode }}
-        ></div>
+        />
 
         <div className="bg-gray-400 p-4 rounded-lg mb-4 bg-opacity-30 ">
           <code className="text-sm ">background: {gradientCode};</code>
