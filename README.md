@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tool for Dev
 
-## Getting Started
+**Tool for Dev** est une application conçue pour simplifier et améliorer le flux de travail des développeurs en offrant un ensemble d'outils utiles dans un seul environnement. Que vous soyez développeur front-end, back-end, ou full-stack, **Tool for Dev** vous propose des fonctionnalités adaptées pour gagner en productivité.
 
-First, run the development server:
+## Installation
+
+Clonez le dépôt et installez les dépendances avec npm ou yarn :
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/votre-utilisateur/tool-for-dev.git
+cd tool-for-dev
+npm install
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Démarrage de l'application
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Pour démarrer l'application en mode développement, utilisez la commande suivante :
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    ```bash
+    npm run dev
+    ```
 
-## Learn More
+L'application sera accessible à l'adresse http://localhost:3000.
 
-To learn more about Next.js, take a look at the following resources:
+## Fonctionnalités
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **[Générateur de dégradés CSS](https://tool-for-dev.netlify.app/css-gradient)** : Créez des dégradés complexes et obtenez le code CSS instantanément.
+  ![CSS_gradient.png](./public/CSS_gradient.png)
+- **[Lecteur Markdown](https://tool-for-dev.netlify.app/md-reader)** : Prévisualisez votre Markdown directement dans l'application.
+  ![MD_reader.png](./public/MD_reader.png)
+- **[Générateur de QR Codes](https://tool-for-dev.netlify.app/qr-code)** : Créez des QR Codes personnalisés pour vos projets.
+  ![QR_code.png](./public/QR_code.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Structure du projet
 
-## Deploy on Vercel
+Le projet est structuré comme suit :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+.
+├── public/
+│   ├── CSS_gradient.png
+│   ├── MD_reader.png
+│   ├── QR_code.png
+│   └── ...
+├── src/
+│   ├── app/
+│   │   ├── css-gradient/
+│   │   │   └── page.tsx
+│   │   ├── md-reader/
+│   │   │   └── page.tsx
+│   │   ├── qr-code/
+│   │   │   └── page.tsx
+│   │   └── ...
+│   ├── components/
+│   │   ├── Navbar/
+│   │   │   └── Navbar.tsx
+│   │   └── ...
+│   └── ...
+├── README.md
+├── package.json
+├── next.config.js
+└── ...
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contribution
+
+Les contributions sont les bienvenues ! Pour contribuer :
+
+- Forkez le projet.
+- Créez votre branche de fonctionnalité (git checkout -b feature/AmazingFeature).
+- Commitez vos modifications (git commit -m 'Add some AmazingFeature').
+- Poussez vers la branche (git push origin feature/AmazingFeature).
+- Ouvrez une Pull Request.
+
+## Licence
+
+Distribué sous la licence MIT. Voir LICENSE pour plus d'informations.
+
+## A propos
+
+Ce projet est développé par [Votre Nom] et est conçu pour être un outil polyvalent pour les développeurs.
