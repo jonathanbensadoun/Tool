@@ -41,8 +41,8 @@ Le projet est structuré comme suit :
 ├── public/
 │   ├── CSS_gradient.png
 │   ├── MD_reader.png
-│   ├── QR_code.png
-│   └── ...
+│   └── QR_code.png
+│   
 ├── src/
 │   ├── app/
 │   │   ├── css-gradient/
@@ -50,17 +50,15 @@ Le projet est structuré comme suit :
 │   │   ├── md-reader/
 │   │   │   └── page.tsx
 │   │   ├── qr-code/
-│   │   │   └── page.tsx
-│   │   └── ...
-│   ├── components/
-│   │   ├── Navbar/
-│   │   │   └── Navbar.tsx
-│   │   └── ...
-│   └── ...
+│   │   └── page.tsx    
+│   └── components/
+│       ├── Navbar/
+│       └── Navbar.tsx
+│   
 ├── README.md
 ├── package.json
-├── next.config.js
-└── ...
+└─── next.config.js
+
 ```
 
 ## Contribution
