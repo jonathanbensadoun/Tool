@@ -31,6 +31,8 @@ L'application sera accessible à l'adresse http://localhost:3000.
   ![MD_reader.png](./public/MD_reader.png)
 - **[Générateur de QR Codes](https://tool-for-dev.netlify.app/qr-code)** : Créez des QR Codes personnalisés pour vos projets.
   ![QR_code.png](./public/QR_code.png)
+- **[Generateur de date](https://tool-for-dev.netlify.app/date_generator.png)** : Générer des dates en fonction de vos besoins.
+  ![Date_generator.png](./public/Date_generator.png)
 
 ## Structure du projet
 
@@ -42,7 +44,7 @@ Le projet est structuré comme suit :
 │   ├── CSS_gradient.png
 │   ├── MD_reader.png
 │   └── QR_code.png
-│   
+│
 ├── src/
 │   ├── app/
 │   │   ├── css-gradient/
@@ -50,11 +52,11 @@ Le projet est structuré comme suit :
 │   │   ├── md-reader/
 │   │   │   └── page.tsx
 │   │   ├── qr-code/
-│   │   └── page.tsx    
+│   │   └── page.tsx
 │   └── components/
 │       ├── Navbar/
 │       └── Navbar.tsx
-│   
+│
 ├── README.md
 ├── package.json
 └─── next.config.js

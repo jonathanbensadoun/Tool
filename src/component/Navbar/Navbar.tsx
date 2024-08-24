@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   return (
@@ -7,25 +8,61 @@ const Navbar: React.FC = () => {
       className="flex flex-row justify-between p-4"
       style={{ background: "linear-gradient(36deg, #5636b0,25%, #0d0d31)" }}
     >
-      <h1>Tool For Dev</h1>
-      <ul
-        className="flex flex-row"
-        style={{
-          width: "40%",
-          justifyContent: "space-around",
-        }}
-      >
-        <li style={{ marginRight: "10px" }}>
-          <Link href="/qr-code">QR Code</Link>
+      <Link href="/" className="text-white font-bold">
+        Tool For Dev
+      </Link>
+      <ul className="flex flex-row items-center space-x-4 md:space-x-8 gap-4">
+        <li>
+          <Link href="/qr-code" className="text-white">
+            <span className="hidden md:inline">QR Code</span>
+            <span className="md:hidden">
+              <Image
+                src="/qr-code-icon.png"
+                width={24}
+                height={24}
+                alt="QR Code Generator"
+              />
+            </span>
+          </Link>
         </li>
         <li>
-          <Link href="/css-gradient">CSS Gradient</Link>
+          <Link href="/css-gradient" className="text-white">
+            <span className="hidden md:inline">CSS Gradient</span>
+            <span className="md:hidden">
+              <Image
+                src="/gradient-icon.png"
+                width={24}
+                height={24}
+                alt="CSS Gradient Generator"
+              />
+            </span>
+          </Link>
         </li>
         <li>
-          <Link href="/md-reader">MD reader</Link>
+          <Link href="/md-reader" className="text-white">
+            <span className="hidden md:inline">MD reader</span>
+            <span className="md:hidden">
+              <Image
+                src="/reader-icon.png"
+                width={24}
+                height={24}
+                alt="Reader for markdown"
+              />
+            </span>
+          </Link>
         </li>
         <li>
-          <Link href="/date-generator">Date generator</Link>
+          <Link href="/date-generator" className="text-white">
+            <span className="hidden md:inline">Date generator</span>
+            <span className="md:hidden">
+              <Image
+                src="/date-icon.png"
+                width={24}
+                height={24}
+                alt="Date javascript Generator"
+              />
+            </span>
+          </Link>
         </li>
       </ul>
     </nav>
