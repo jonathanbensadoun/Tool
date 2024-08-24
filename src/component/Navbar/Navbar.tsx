@@ -24,6 +24,9 @@ const Navbar: React.FC = () => {
         <li>
           <Link href="/md-reader">MD reader</Link>
         </li>
+        <li>
+          <Link href="/date-generator">Date generator</Link>
+        </li>
       </ul>
     </nav>
   );
