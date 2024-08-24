@@ -1,12 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { IoMdCopy } from "react-icons/io";
+import { FaCheck } from "react-icons/fa6";
 const DateGenerator = () => {
   const [selectedOption, setSelectedOption] = useState("currentDate");
   const [generatedCode, setGeneratedCode] =
     useState(`// Obtient la date actuelle et l'affiche
     const currentDate = new Date();
     console.log(currentDate);`);
+  const [copied, setCopied] = useState(false);
 
   const handleOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption(e.target.value);
@@ -98,6 +100,12 @@ const DateGenerator = () => {
     setGeneratedCode(code);
   };
 
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(generatedCode);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
   return (
     <div className="bg-36 flex flex-col justify-center items-center h-screen">
       <div className="xl:w-1/3 bg-white p-4 rounded-lg bg-opacity-20 flex flex-col justify-around items-center h-1/2 ">
@@ -126,8 +134,16 @@ const DateGenerator = () => {
 
         <h2>Code généré:</h2>
         <div className="flex flex-col justify-start items-center w-3/4 relative bg-white bg-opacity-20 p-4 rounded-lg">
-          <div className="bg-violet-800 p-2 rounded-full w-10 h-10 absolute -right-5 -top-5">
-            <IoMdCopy className="text-2xl" />
+          <div
+            onClick={copyToClipboard}
+            role="button"
+            className="bg-violet-800 p-2 rounded-full w-10 h-10 absolute -right-5 -top-5"
+          >
+            {copied ? (
+              <FaCheck className="text-2xl" />
+            ) : (
+              <IoMdCopy className="text-2xl" />
+            )}
           </div>
           <code>{generatedCode}</code>
         </div>
