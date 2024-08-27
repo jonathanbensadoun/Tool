@@ -51,6 +51,8 @@ Le projet est structuré comme suit :
 │   │   │   └── page.tsx
 │   │   ├── md-reader/
 │   │   │   └── page.tsx
+│   │   ├── date-generator/
+│   │   │   └── page.tsx
 │   │   ├── qr-code/
 │   │   └── page.tsx
 │   └── components/
