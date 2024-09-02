@@ -28,6 +28,13 @@ const Page: React.FC = () => {
   const handleCheck3Change = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCheck3(event.target.checked);
   };
+  const handleCheck4Change = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCheck3(event.target.checked);
+  };
+  const handleCheck5Change = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCheck3(event.target.checked);
+  };
+
 
   const checkedCount = [check1, check2, check3].filter(
     (isChecked) => isChecked
