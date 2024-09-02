@@ -3,11 +3,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import QRCode from "react-qr-code";
 import { toPng } from "html-to-image";
+import Image from "next/image";
 
 const Page: React.FC = () => {
   const [valueQRCode, setValueQRCode] = useState<string>("");
   const [isValidated, setIsValidated] = useState<boolean>(false);
   const [colorQrcode, setColorQrcode] = useState<string>("#2e3c84");
+  const [uploadedImage, setUploadedImage] = useState<string | null>(null);
 
   const qrCodeRef = useRef<HTMLDivElement>(null);
 
@@ -36,6 +38,17 @@ const Page: React.FC = () => {
       });
   };
 
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setUploadedImage(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <div className="bg-36 flex flex-col justify-center items-center h-screen">
       <div className="xl:w-1/3  bg-white p-4 rounded-lg bg-opacity-20 flex flex-col justify-center items-center">
@@ -47,6 +60,17 @@ const Page: React.FC = () => {
           onChange={(e) => setColorQrcode(e.target.value)}
           className=" my-4 text-black border-2 border-black rounded-md w-20 h-10 "
         />
+        <div className="mb-4 flex flex-col justify-center items-center">
+          <label className="block mb-2  font-medium">
+            Télécharger une image
+          </label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageUpload}
+            className="mb-4"
+          />
+        </div>
         <input
           type="text"
           value={valueQRCode}
@@ -55,14 +79,23 @@ const Page: React.FC = () => {
           placeholder="Enter QR Code value"
         />
 
-        <div ref={qrCodeRef} className="border-2 shadow-lg">
+        <div ref={qrCodeRef} className="border-2 shadow-lg relative">
           <QRCode
             size={256}
             value={valueQRCode}
             viewBox={`0 0 256 256`}
-            level="M"
+            level="Q"
             fgColor={colorQrcode}
           />
+          {uploadedImage && (
+            <Image
+              src={uploadedImage}
+              alt="Uploaded"
+              width={40}
+              height={40}
+              className="absolute inset-0 w-20 h-20 m-auto rounded-md   bg-white"
+            />
+          )}
         </div>
 
         <button onClick={handleDownload} className="py-2 button-37 mt-10">
