@@ -7,17 +7,10 @@ import Image from "next/image";
 
 const Page: React.FC = () => {
   const [valueQRCode, setValueQRCode] = useState<string>("");
-  const [isValidated, setIsValidated] = useState<boolean>(false);
   const [colorQrcode, setColorQrcode] = useState<string>("#2e3c84");
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
 
   const qrCodeRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (valueQRCode === "") {
-      setIsValidated(false);
-    }
-  }, [valueQRCode]);
 
   const handleDownload = () => {
     if (qrCodeRef.current === null) {
