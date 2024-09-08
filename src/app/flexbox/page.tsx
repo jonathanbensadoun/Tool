@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-
+// pages pas encore fonctionelle
 const Page: React.FC = () => {
   const [numberBox, setNumberBox] = React.useState<number>(1);
   const [check1, setCheck1] = React.useState<boolean>(false);
