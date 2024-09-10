@@ -15,6 +15,10 @@ const DateGenerator = () => {
     generateCode(e.target.value);
   };
 
+  /**
+   * Génère le code JavaScript en fonction de l'option sélectionnée
+   * @param option  L'option sélectionnée
+   */
   const generateCode = (option: string) => {
     let code = "";
     switch (option) {
