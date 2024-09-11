@@ -22,9 +22,11 @@ export default function Home() {
                 <Image
                   className="border-2 border-white rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
                   src={image.src}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{ objectFit: "cover" }}
                   alt={`Outil ${image.src.split("/").pop()?.split(".")[0]}`}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority
                 />
               </div>
             </Link>
