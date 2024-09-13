@@ -7,6 +7,7 @@ export default function Home() {
     { src: "/QR_Code.png", href: "/qr-code" },
     { src: "/Date_Generator.png", href: "/date-generator" },
     { src: "/MD_Reader.png", href: "/md-reader" },
+    { src: "/Password_Generator.png", href: "/password-generator" },
   ];
 
   return (
