@@ -64,6 +64,19 @@ const Navbar: React.FC = () => {
             </span>
           </Link>
         </li>
+        <li>
+          <Link href="/password-generator" className="text-white">
+            <span className="hidden md:inline">Password generator</span>
+            <span className="md:hidden">
+              <Image
+                src="/password-generator-icon.png"
+                width={24}
+                height={24}
+                alt="Date javascript Generator"
+              />
+            </span>
+          </Link>
+        </li>
       </ul>
     </nav>
   );

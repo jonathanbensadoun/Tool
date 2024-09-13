@@ -28,9 +28,11 @@ const GradientGenerator = () => {
   };
 
   return (
-    <div className="bg-36 flex flex-col justify-center items-center h-screen">
+    <div className="bg-36 flex flex-col justify-center items-center h-screen p-4">
       <div className="xl:w-1/3 bg-white p-4 rounded-lg bg-opacity-20 flex flex-col justify-center items-cente ">
-        <h2 className="text-2xl font-bold mb-4">Générateur de Gradient CSS</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center">
+          Générateur de Gradient CSS
+        </h2>
 
         <div className="mb-4">
           <label className="block text-sm font-medium ">Couleur 1</label>

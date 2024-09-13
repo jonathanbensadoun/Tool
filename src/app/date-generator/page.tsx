@@ -111,45 +111,52 @@ const DateGenerator = () => {
   };
 
   return (
-    <div className="bg-36 flex flex-col justify-center items-center h-screen">
+    <div className="bg-36 flex flex-col justify-center items-center h-screen p-4">
       <div className="xl:w-1/3 bg-white p-4 rounded-lg bg-opacity-20 flex flex-col justify-around items-center h-1/2 ">
-        <h2 className="text-2xl font-bold mb-4">
-          generateur de date en JavaScript
+        <h2 className="text-2xl font-bold text-center">
+          Générateur de date en JavaScript
         </h2>
-        <label htmlFor="dateOptions">Choisir une option:</label>
-        <select
-          id="dateOptions"
-          value={selectedOption}
-          onChange={handleOptionChange}
-          className="text-black"
-        >
-          <option value="currentDate">Date Actuelle</option>
-          <option value="formatDate">Format Date</option>
-          <option value="addDays">Ajouter des Jours à la Date</option>
-          <option value="subtractDays">Soustraire des Jours de la Date</option>
-          <option value="differenceInDays">Différence en Jours</option>
-          <option value="startOfMonth">Début du Mois</option>
-          <option value="endOfMonth">Fin du Mois</option>
-          <option value="isWeekend">Est-ce le Week-end?</option>
-          <option value="addMonths">Ajouter des Mois à la Date</option>
-          <option value="formatCustom">Format Personnalisé (jj/mm/aaaa)</option>
-          <option value="formatDateFrench">Format Date en Français</option>
-        </select>
-
-        <h2>Code généré:</h2>
-        <div className="flex flex-col justify-start items-center w-3/4 relative bg-white bg-opacity-20 p-4 rounded-lg">
-          <div
-            onClick={copyToClipboard}
-            role="button"
-            className="bg-violet-800 p-2 rounded-full w-10 h-10 absolute -right-5 -top-5"
+        <div className="flex flex-col justify-center items-center">
+          <label htmlFor="dateOptions">Choisir une option:</label>
+          <select
+            id="dateOptions"
+            value={selectedOption}
+            onChange={handleOptionChange}
+            className="text-black"
           >
-            {copied ? (
-              <FaCheck className="text-2xl" />
-            ) : (
-              <IoMdCopy className="text-2xl" />
-            )}
+            <option value="currentDate">Date Actuelle</option>
+            <option value="formatDate">Format Date</option>
+            <option value="addDays">Ajouter des Jours à la Date</option>
+            <option value="subtractDays">
+              Soustraire des Jours de la Date
+            </option>
+            <option value="differenceInDays">Différence en Jours</option>
+            <option value="startOfMonth">Début du Mois</option>
+            <option value="endOfMonth">Fin du Mois</option>
+            <option value="isWeekend">Est-ce le Week-end?</option>
+            <option value="addMonths">Ajouter des Mois à la Date</option>
+            <option value="formatCustom">
+              Format Personnalisé (jj/mm/aaaa)
+            </option>
+            <option value="formatDateFrench">Format Date en Français</option>
+          </select>
+        </div>
+        <div className="flex  flex-col justify-center items-center ">
+          <h2>Code généré:</h2>
+          <div className="flex flex-col justify-start items-center w-3/4 relative bg-white bg-opacity-20 p-4 rounded-lg">
+            <div
+              onClick={copyToClipboard}
+              role="button"
+              className="bg-violet-800 p-2 rounded-full w-10 h-10 absolute -right-5 -top-5"
+            >
+              {copied ? (
+                <FaCheck className="text-2xl" />
+              ) : (
+                <IoMdCopy className="text-2xl" />
+              )}
+            </div>
+            <code>{generatedCode}</code>
           </div>
-          <code>{generatedCode}</code>
         </div>
       </div>
     </div>
