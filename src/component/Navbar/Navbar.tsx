@@ -13,6 +13,20 @@ const Navbar: React.FC = () => {
       </Link>
       <ul className="flex flex-row items-center space-x-4 md:space-x-8 gap-4">
         <li>
+          <Link href="/favicon-generator" className="text-white">
+            <span className="hidden md:inline">Favicon generator</span>
+            <span className="md:hidden">
+              <Image
+                src="/icons8-favicon-48.png"
+                width={24}
+                height={24}
+                alt="QR Code Generator"
+              />
+            </span>
+          </Link>
+        </li>
+
+        <li>
           <Link href="/qr-code" className="text-white">
             <span className="hidden md:inline">QR Code</span>
             <span className="md:hidden">
