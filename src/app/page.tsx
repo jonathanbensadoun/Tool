@@ -8,6 +8,7 @@ export default function Home() {
     { src: "/Date_Generator.png", href: "/date-generator" },
     { src: "/MD_Reader.png", href: "/md-reader" },
     { src: "/Password_Generator.png", href: "/password-generator" },
+    { src: "/Favicon.png", href: "/favicon-generator" },
   ];
 
   return (
