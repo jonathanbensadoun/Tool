@@ -86,7 +86,7 @@ const Page: React.FC = () => {
               alt="Uploaded"
               width={40}
               height={40}
-              className="absolute inset-0 w-20 h-20 m-auto rounded-md   bg-white"
+              className="absolute inset-0 w-20 h-20 m-auto rounded-full bg-white"
             />
           )}
         </div>
